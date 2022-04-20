@@ -1,5 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
+import Home from './pages/Home'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -9,8 +10,7 @@ import {
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-      </React.Fragment>
+      <Home />
     );
   }
 }
