@@ -1,0 +1,2 @@
+module UserBurrowsHelper
+end

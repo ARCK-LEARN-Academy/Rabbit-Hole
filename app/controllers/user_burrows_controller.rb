@@ -1,0 +1,2 @@
+class UserBurrowsController < ApplicationController
+end
