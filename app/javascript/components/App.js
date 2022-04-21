@@ -9,12 +9,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 class App extends React.Component {
   render() {
     return (
-      <>
-        <Header />
-        <Home />
-        <Paginate />
-        <Footer />
-      </>
+      <Router>
+          <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/burrow/:id" component={ShowBurrow} />
+          <Route path="/post/:id" component={Post} />
+          <Route path="/user/:id" component={UserProfile} />
+          <Route path="/about" component={AboutUs} />
+        </Switch>
+          <Paginate />
+          <Footer />
+      </Router>
     );
   }
 }
