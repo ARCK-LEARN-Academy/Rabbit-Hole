@@ -1,18 +1,22 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import React from "react";
+import Home from "./pages/Home";
+import Paginate from "./components/Paginate";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-      </React.Fragment>
+      <>
+        <Header />
+        <Home />
+        <Paginate />
+        <Footer />
+      </>
     );
   }
 }
 
-export default App
+export default App;
