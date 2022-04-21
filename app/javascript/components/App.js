@@ -1,6 +1,8 @@
 import React from "react"
 import Home from './pages/Home'
+import Paginate from "./components/Paginate"
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 import {
   BrowserRouter as Router,
@@ -14,6 +16,8 @@ class App extends React.Component {
       <>
       <Header />
       <Home />
+      <Paginate />
+      <Footer />
       </>
     );
   }
