@@ -5,8 +5,8 @@ class Home extends Component {
     render() {
         return (
             <>
-            
-            <BurrowCards />
+                <h1>Burrows</h1>
+                <BurrowCards />
             </>
         )
     }
