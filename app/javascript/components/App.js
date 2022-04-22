@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Paginate from "./components/Paginate";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
           {/* <Route path="/burrowshow/:id" component={ShowBurrow} />
           <Route path="/burrow/new" component={BurrowNew} /> */}
 
