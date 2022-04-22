@@ -9,15 +9,9 @@ class BurrowsController < ApplicationController
     render json: @burrows
   end 
 
-  # def new 
-  #   @burrow = Burrow.new
-  #   @posts = Posts.all
-  # end 
-
   def show 
     @burrow = Burrow.find(params[:id])
     render json: @burrow
-    # @posts = Posts.all --> is this needed to show all the posts. 
   end 
 
   private
