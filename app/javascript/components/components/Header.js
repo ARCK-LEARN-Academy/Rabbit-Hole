@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
     Collapse, DropdownItem, DropdownMenu,
     DropdownToggle,
@@ -13,7 +13,7 @@ import {
 
 export default class Header extends Component {
     render() {
-        return(
+        return (
             <>
                 <div>
                     <Navbar
@@ -24,7 +24,7 @@ export default class Header extends Component {
                         <NavbarBrand href="/">
                             Logo
                         </NavbarBrand>
-                        <NavbarToggler onClick={function noRefCheck(){}} />
+                        <NavbarToggler onClick={function noRefCheck() { }} />
                         <Collapse navbar>
                             <Nav
                                 className="me-auto"
@@ -37,7 +37,7 @@ export default class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="/catindex">
-                                    Filler
+                                        Filler
                                     </NavLink>
                                 </NavItem>
                                 <UncontrolledDropdown inNavbar nav>
