@@ -11,6 +11,7 @@ import {
     UncontrolledDropdown
 } from "reactstrap";
 
+
 export default class Header extends Component {
     render() {
         return(
@@ -22,7 +23,7 @@ export default class Header extends Component {
                         light
                     >
                         <NavbarBrand href="/">
-                            Logo
+                            logo
                         </NavbarBrand>
                         <NavbarToggler onClick={function noRefCheck(){}} />
                         <Collapse navbar>
