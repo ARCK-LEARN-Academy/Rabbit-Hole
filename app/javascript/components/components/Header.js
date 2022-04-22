@@ -45,7 +45,7 @@ export default class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/catindex">
+                                    <NavLink href="/">
                                         Filler
                                     </NavLink>
                                 </NavItem>
@@ -55,10 +55,10 @@ export default class Header extends Component {
                                     </DropdownToggle>
                                     <DropdownMenu end>
                                         <DropdownItem>
-                                            <NavLink href="/catnew">Add a Post</NavLink>
+                                            <NavLink href="/">Add a Post</NavLink>
                                         </DropdownItem>
                                         <DropdownItem>
-                                            <NavLink href="/catindex">Add a Burrow</NavLink>
+                                            <NavLink href="/">Add a Burrow</NavLink>
                                         </DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown>
