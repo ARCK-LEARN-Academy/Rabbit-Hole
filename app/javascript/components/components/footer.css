@@ -33,10 +33,13 @@
   flex-direction: column;
   margin-bottom: 10px;
   width: 30%;
+  text-align: center;
 }
 
+
 .footer-info__name, .footer-info__email, .footer-info__number {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  margin-top: 100px;
 }
 
 .footer-info__name, .footer-info__returns {
@@ -46,10 +49,13 @@
 .footer-info__email, .footer-info__terms {
   text-align: center;
   font-family: Verdana;
+  align-items: center;
+  justify-content: center;
 }
 
+
 .footer-info__number, .footer-info__contact {
-  text-align: end;
+  text-align: right;
 }
 
 .footer-date {
@@ -76,4 +82,9 @@
   font-family: RobotoBold;
   font-size: large;
   margin: 0px 20px;
+}
+
+.navlink {
+  display: flex;
+  justify-content: center;
 }

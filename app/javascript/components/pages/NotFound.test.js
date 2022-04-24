@@ -4,10 +4,11 @@ import Adapter from 'enzyme-adapter-react-16'
 import NotFound from './NotFound'
 Enzyme.configure({adapter: new Adapter()})
 
-describe("When NotFound page renders", () => {
+
+describe("When NotFound renders", () => {
     it("displays a heading", () => {
-        const notFound = shallow(<NotFound />)
-        const notFoundHeading = notFound.find("h2").text()
-        expect(notFoundHeading).toEqual("Page not Found")
+        const nothing = shallow(<NotFound />)
+        const nothingHeading = nothing.find("h1").text()
+        expect(nothingHeading).toEqual("Oooops.... Page Not Found")
     })
 })

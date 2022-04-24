@@ -14,6 +14,9 @@ import {
   UncontrolledDropdown,
 } from "reactstrap";
 
+import './headerstyles.css'
+import rabbithole from '../images/rabbitlogo.png'
+
 export default class Header extends Component {
   render() {
     const {
@@ -29,7 +32,10 @@ export default class Header extends Component {
       <>
         <div>
           <Navbar color="light" expand="md" light>
-            <NavbarBrand href="/">logo</NavbarBrand>
+            <NavbarBrand href="/">
+                <img src = {rabbithole} class = "rabbitlogo" />
+
+            </NavbarBrand>
             <NavbarToggler onClick={function noRefCheck() {}} />
             <Collapse navbar>
               <Nav className="me-auto" navbar>
