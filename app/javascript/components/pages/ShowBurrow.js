@@ -12,47 +12,6 @@ import {
   Button,
 } from "reactstrap";
 
-// class ShowBurrow extends Component {
-//   constructor() {
-//     super();
-//   }
-//   render() {
-//     return (
-//       <>
-//         <h1>ShowBurrow</h1>
-
-//         <div>
-//           <Card body className="text-center">
-//             <CardTitle tag="h5">Example Burrow</CardTitle>
-//             <CardText>
-//               Burrow main content. With supporting text below as a natural lead-in to additional
-//               content.
-//             </CardText>
-//             <Button>Read Post</Button>
-//           </Card>
-// <Card body className="text-left">
-//   <CardTitle tag="h5">Example Post1</CardTitle>
-//   <CardText>
-//     With supporting text below as a natural lead-in to additional
-//     content.
-//   </CardText>
-//   <Button>Read Post1</Button>
-// </Card>
-// <Card body className="text-right">
-//   <CardTitle tag="h5">Example Post2</CardTitle>
-//   <CardText>
-//     With supporting text below as a natural lead-in to additional
-//     content.
-//   </CardText>
-//   <Button>Read Post2</Button>
-//           </Card>
-//         </div>
-//       </>
-//     );
-//   }
-// }
-
-// export default ShowBurrow;
 
 class ShowBurrow extends Component {
   render() {
