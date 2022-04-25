@@ -14,8 +14,8 @@ import {
   UncontrolledDropdown,
 } from "reactstrap";
 
-import './headerstyles.css'
-import rabbithole from '../images/rabbitlogo.png'
+import "./headerstyles.css";
+import rabbithole from "../images/rabbitlogo.png";
 
 export default class Header extends Component {
   render() {
@@ -33,8 +33,7 @@ export default class Header extends Component {
         <div>
           <Navbar color="light" expand="md" light>
             <NavbarBrand href="/">
-                <img src = {rabbithole} class = "rabbitlogo" />
-
+              <img src={rabbithole} class="rabbitlogo" />
             </NavbarBrand>
             <NavbarToggler onClick={function noRefCheck() {}} />
             <Collapse navbar>
@@ -42,20 +41,26 @@ export default class Header extends Component {
                 <NavItem>
                   <NavLink href="/">Home</NavLink>
                 </NavItem>
-                <NavItem></NavItem>
-                <UncontrolledDropdown inNavbar nav>
-                  <DropdownToggle caret nav>
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu end>
-                    <DropdownItem>
-                      <NavLink href="/postnew">Add a Post</NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <NavLink href="/burrowindex">Add a Burrow</NavLink>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+
+                <NavItem>
+                  <NavLink></NavLink>
+                </NavItem>
+
+                {logged_in && (
+                  <UncontrolledDropdown inNavbar nav>
+                    <DropdownToggle caret nav>
+                      Options
+                    </DropdownToggle>
+                    <DropdownMenu end>
+                      <DropdownItem>
+                        <NavLink href="/postnew">Create Post</NavLink>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <NavLink href="/burrowindex">Create Burrow</NavLink>
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                )}
               </Nav>
               <NavbarText>
                 <Nav>

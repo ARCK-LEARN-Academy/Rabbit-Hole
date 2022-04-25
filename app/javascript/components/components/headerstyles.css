@@ -1,6 +1,7 @@
 .rabbitlogo {
-  height: 75px;
-  width: 75x;
+  height: 100px;
+  width: 100px;
+  display: flex;
 }
 
 .arck {

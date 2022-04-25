@@ -27,7 +27,7 @@ class BurrowCards extends Component {
             width="100%"
           />
           <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
+            <CardTitle tag="h5">Burrow Example1</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
               Card subtitle
             </CardSubtitle>
@@ -36,7 +36,7 @@ class BurrowCards extends Component {
               lead-in to additional content. This content is a little bit
               longer.
             </CardText>
-            <Button>Button</Button>
+            <Button>Go to Burrow Example1</Button>
           </CardBody>
         </Card>
         <Card>
