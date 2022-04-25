@@ -20,3 +20,4 @@ class BurrowsController < ApplicationController
     params.require(:burrow).permit(:title, :about, :image)
   end
 end
+

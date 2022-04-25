@@ -5,8 +5,10 @@ class Home extends Component {
     render() {
         return (
             <>
-                <h1>Burrows</h1>
-                <BurrowCards />
+
+            <h1>Explore the Burrows</h1>
+            <BurrowCards />
+
             </>
         )
     }
