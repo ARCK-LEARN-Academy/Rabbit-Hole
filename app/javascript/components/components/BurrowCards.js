@@ -8,76 +8,34 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Button,
 } from "reactstrap";
 
 class BurrowCards extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
+
   render() {
     return (
       <CardGroup>
-        <Card>
+      {this.props.burrows.map((burrow) => (
+        <Card key={burrow.id}>
           <CardImg
             alt="Card image cap"
-            src="https://picsum.photos/318/180"
+            src={burrow.image}
             top
             width="100%"
           />
           <CardBody>
-            <CardTitle tag="h5">Burrow Example1</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
+            <CardTitle tag="h5">{burrow.title}</CardTitle>
             <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              {burrow.about}
             </CardText>
-            <Button>Go to Burrow Example1</Button>
+            <Button>Enter {burrow.title}</Button>
           </CardBody>
         </Card>
-        <Card>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
-          />
-          <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
-          />
-          <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
+        ))}
       </CardGroup>
     );
   }

@@ -33,7 +33,7 @@ export default class Header extends Component {
         <div>
           <Navbar color="light" expand="md" light>
             <NavbarBrand href="/">
-              <img src={rabbithole} class="rabbitlogo" />
+              <img src={rabbithole} className="rabbitlogo" />
             </NavbarBrand>
             <NavbarToggler onClick={function noRefCheck() {}} />
             <Collapse navbar>
