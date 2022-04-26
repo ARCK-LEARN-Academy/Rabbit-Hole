@@ -11,7 +11,7 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:3000/burrows")
+        fetch("/burrows")
         .then(response => response.json())
         .then(results => {
             this.setState({
