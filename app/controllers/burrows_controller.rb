@@ -1,10 +1,12 @@
 class BurrowsController < ApplicationController
   def create 
+    
     @burrow = Burrow.create(burrow_params)
     render json: @burrow
   end
 
   def index
+    
     @burrows = Burrow.all
     render json: @burrows
   end 
