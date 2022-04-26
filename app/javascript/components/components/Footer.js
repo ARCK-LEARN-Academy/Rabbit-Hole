@@ -25,8 +25,8 @@ export default class Footer extends Component {
               <section className="footer-info__terms">
                 <br />
                 <br />
-                <img src={arck} class="arck" />
-                <div class="navlink">
+                <img src={arck} className="arck" />
+                <div className="navlink">
                   <Nav>
                     <NavItem>
                       <NavLink href="/aboutus">About Us</NavLink>

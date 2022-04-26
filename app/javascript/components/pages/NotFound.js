@@ -3,15 +3,12 @@
 import React, { Component } from "react";
 
 import {
-  CardGroup,
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardTitle,
   CardSubtitle,
   CardLink,
-  Button,
 } from "reactstrap";
 
 export default class NotFound extends Component {
