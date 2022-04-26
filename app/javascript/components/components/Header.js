@@ -56,7 +56,7 @@ export default class Header extends Component {
                         <NavLink href="/postnew">Create Post</NavLink>
                       </DropdownItem>
                       <DropdownItem>
-                        <NavLink href="/burrowindex">Create Burrow</NavLink>
+                        <NavLink href="/burrownew">Create Burrow</NavLink>
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
