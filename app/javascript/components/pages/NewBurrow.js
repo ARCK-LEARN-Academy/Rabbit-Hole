@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import { Button, Form, FormGroup, Input, Label} from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 
@@ -26,6 +25,20 @@ class NewBurrow extends Component {
         this.setState({submitted: true})
     
     }
+
+    createNewBurrow = (newBurrow) => {
+        fetch("/burrownew", {
+          body: JSON.stringify(newBurrow),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "POST"
+        })
+        .then(response => response.json())
+        // .then(payload => this.createNewBurrow()) <---- fix dis
+        .then(result => console.log(result))
+        .catch(errors => console.log("Error: Burrow not generated", errors))
+      }
 
     render() {
         return(
