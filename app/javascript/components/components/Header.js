@@ -47,19 +47,9 @@ export default class Header extends Component {
                 </NavItem>
 
                 {logged_in && (
-                  <UncontrolledDropdown inNavbar nav>
-                    <DropdownToggle caret nav>
-                      Options
-                    </DropdownToggle>
-                    <DropdownMenu end>
-                      <DropdownItem>
-                        <NavLink href="/postnew">Create Post</NavLink>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <NavLink href="/burrownew">Create Burrow</NavLink>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                  <NavItem>
+                    <NavLink href="/burrownew">Create Burrow</NavLink>
+                  </NavItem>     
                 )}
               </Nav>
               <NavbarText>
