@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import NewBurrow from "./pages/NewBurrow";
+import NewPost from "./pages/NewPost";
 import ShowBurrow from "./pages/ShowBurrow";
 import ShowPost from "./pages/ShowPost";
 
@@ -17,12 +18,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      burrows: []
+      burrows: [],
+      posts: []
     }
   }
 
   createNewBurrow = (NewBurrow) => {
     console.log(NewBurrow)
+  };
+  createNewPost = (NewPost) => {
+    console.log(NewPost)
   }
 
   render(){
@@ -31,18 +36,15 @@ class App extends React.Component {
         <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/burrowshow/:id" component={ShowBurrow} />
-          <Route path="/showpost" component={ShowPost} />
-
+          <Route path="/burrow/:burrowid" component={ShowBurrow} />
           <Route path="/burrownew" render={(props) => <NewBurrow createNewBurrow={this.createNewBurrow}/>}/>
+          <Route path="/postnew" render={(props) => <NewPost 
+          createNewPost={this.createNewPost}/>}/>
 
           {/* <Route path="/post/:id" component={Post} />
           <Route path="/user/:id" component={UserProfile} />
            */}
           <Route path="/aboutus" component={AboutUs} />
-          <Route component={ShowBurrow} />
-         
-          
           <Route component={NotFound} />
         </Switch>
         <Paginate />

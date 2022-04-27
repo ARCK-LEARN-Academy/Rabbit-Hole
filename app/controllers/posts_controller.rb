@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
- def create 
+  def create 
     @post = Post.create(post_params)
     render json: @post
   end
       
   def index
-     @posts = Post.all
+    @posts = Post.all
     render json: @posts
   end 
       
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
       render json: post
     else
       render json: post.errors
+    end
   end 
 
   def destroy 
@@ -29,6 +30,7 @@ class PostsController < ApplicationController
       render json: post
     else
       render json: post.errors
+    end
   end 
       
   private
