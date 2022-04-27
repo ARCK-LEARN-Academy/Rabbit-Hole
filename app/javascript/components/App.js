@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import NewBurrow from "./pages/NewBurrow";
 import ShowBurrow from "./pages/ShowBurrow";
+import ShowPost from "./pages/ShowPost";
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -30,6 +32,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/burrowshow/:id" component={ShowBurrow} />
+          <Route path="/showpost" component={ShowPost} />
+
           <Route path="/burrownew" render={(props) => <NewBurrow createNewBurrow={this.createNewBurrow}/>}/>
 
           {/* <Route path="/post/:id" component={Post} />
@@ -37,6 +41,8 @@ class App extends React.Component {
            */}
           <Route path="/aboutus" component={AboutUs} />
           <Route component={ShowBurrow} />
+         
+          
           <Route component={NotFound} />
         </Switch>
         <Paginate />
