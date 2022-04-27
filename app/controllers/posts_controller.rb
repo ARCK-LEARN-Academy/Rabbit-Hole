@@ -21,6 +21,7 @@ class PostsController < ApplicationController
       render json: post
     else
       render json: post.errors
+    end
   end 
 
   def destroy 
@@ -29,6 +30,7 @@ class PostsController < ApplicationController
       render json: post
     else
       render json: post.errors
+    end
   end 
       
   private
