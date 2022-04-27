@@ -29,14 +29,13 @@ class App extends React.Component {
         <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/burrowshow/:id" component={ShowBurrow} />
+          <Route path="/burrow/:burrowid" component={ShowBurrow} />
           <Route path="/burrownew" render={(props) => <NewBurrow createNewBurrow={this.createNewBurrow}/>}/>
 
           {/* <Route path="/post/:id" component={Post} />
           <Route path="/user/:id" component={UserProfile} />
            */}
           <Route path="/aboutus" component={AboutUs} />
-          <Route component={ShowBurrow} />
           <Route component={NotFound} />
         </Switch>
         <Paginate />

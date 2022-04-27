@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-
+import { Link } from "react-router-dom";
 import {
   CardGroup,
   Card,
@@ -32,7 +31,9 @@ class BurrowCards extends Component {
             <CardText>
               {burrow.about}
             </CardText>
-            <Button>Enter {burrow.title}</Button>
+            <Link to={`/burrow/${burrow.id}`}>
+              <Button>Enter {burrow.title}</Button>
+            </Link>
           </CardBody>
         </Card>
         ))}
