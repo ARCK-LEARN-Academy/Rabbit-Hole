@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import { Button, Form, FormGroup, Input, Label} from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 
@@ -17,14 +16,29 @@ class NewBurrow extends Component {
     }
     handleChange = (e) => {
         let { newBurrow } = this.state
-        newBurrow[e.target.title] = e.target.value
+        newBurrow[e.target.name] = e.target.value
         this.setState({newBurrow: newBurrow})
     
     }
-    handleSubmit = () => {
-        this.props.createNewBurrow(this.state.newBurrow)
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.createNewBurrow(this.state.newBurrow)
         this.setState({submitted: true})
     
+    }
+
+    createNewBurrow = (newBurrow) => {
+        fetch("/burrows", {
+          body: JSON.stringify(newBurrow),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "POST"
+        })
+        .then(response => response.json())
+         
+        .then(result => console.log(result))
+        .catch(errors => console.log("Error: Burrow not generated", errors))
     }
 
     render() {
@@ -34,15 +48,15 @@ class NewBurrow extends Component {
                 <Form>
                     <FormGroup>
                         <Label>Title</Label>
-                        <Input type="text" title="title" value={this.state.newBurrow.title} onChange={this.handleChange}/>
+                        <Input type="text" name="title" value={this.state.newBurrow.title} onChange={this.handleChange}/>
                     </FormGroup>
                     <FormGroup>
                         <Label>About</Label>
-                        <Input type="text" name="about" value={this.state.newBurrow.name} onChange={this.handleChange}/>
+                        <Input type="text" name="about" value={this.state.newBurrow.about} onChange={this.handleChange}/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Add a Pic!</Label>
-                        <Input type="text" name="image" value={this.state.newBurrow.name} onChange={this.handleChange}/>
+                        <Input type="text" name="image" value={this.state.newBurrow.image} onChange={this.handleChange}/>
                     </FormGroup>
                     <Button name="submit" onClick={this.handleSubmit}>
                         Create a New Burrow
