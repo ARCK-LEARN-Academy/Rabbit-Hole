@@ -1,14 +1,10 @@
-
-
 import React, { Component } from "react";
-
 import {
   Card,
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  CardLink,
+  CardSubtitle
 } from "reactstrap";
 
 export default class NotFound extends Component {
@@ -27,7 +23,7 @@ export default class NotFound extends Component {
         className="mb-2 text-muted"
         tag="h6"
       >
-        Card subtitle
+        This is not the burrow you are looking for...
       </CardSubtitle>
     </CardBody>
     <img
@@ -37,14 +33,8 @@ export default class NotFound extends Component {
     />
     <CardBody>
       <CardText>
-        Some quick example text to build on the card title and make up the bulk of the card's content.
+        There is no content here!
       </CardText>
-      <CardLink href="#">
-        Card Link
-      </CardLink>
-      <CardLink href="#">
-        Another Link
-      </CardLink>
     </CardBody>
   </Card>
 </div>
