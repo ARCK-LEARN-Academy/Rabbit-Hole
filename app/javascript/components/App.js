@@ -9,6 +9,8 @@ import AboutUs from "./pages/AboutUs";
 import NewBurrow from "./pages/NewBurrow";
 import NewPost from "./pages/NewPost";
 import ShowBurrow from "./pages/ShowBurrow";
+import ShowPost from "./pages/ShowPost";
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
