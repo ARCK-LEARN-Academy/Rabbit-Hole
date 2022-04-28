@@ -25,12 +25,12 @@ class Home extends Component {
   }
 
   render() {
-    const { posts, isLoaded } = this.state;
+    const { isLoaded } = this.state;
     if (isLoaded) {
       return (
         <>
           <h1>Explore the Burrows</h1>
-          <BurrowCards burrows={burrows} />
+          <BurrowCards burrows={this.state.burrows} />
         </>
       );
     }

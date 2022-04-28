@@ -11,7 +11,6 @@ import NewPost from "./pages/NewPost";
 import ShowBurrow from "./pages/ShowBurrow";
 import ShowPost from "./pages/ShowPost";
 
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
@@ -19,27 +18,35 @@ class App extends React.Component {
     super(props);
     this.state = {
       burrows: [],
-      posts: []
-    }
+      posts: [],
+    };
   }
 
   createNewBurrow = (NewBurrow) => {
-    console.log(NewBurrow)
+    console.log(NewBurrow);
   };
-  createNewPost = (NewPost) => {
-    console.log(NewPost)
-  }
 
-  render(){
+  createNewPost = (NewPost) => {
+    console.log(NewPost);
+  };
+
+  render() {
     return (
       <Router>
         <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/burrow/:burrowid" component={ShowBurrow} />
-          <Route path="/burrownew" render={(props) => <NewBurrow createNewBurrow={this.createNewBurrow}/>}/>
-          <Route path="/postnew" render={(props) => <NewPost 
-          createNewPost={this.createNewPost}/>}/>
+          <Route
+            path="/burrownew"
+            render={(props) => (
+              <NewBurrow createNewBurrow={this.createNewBurrow} />
+            )}
+          />
+          <Route
+            path="/posts/new"
+            render={(props) => <NewPost createNewPost={this.createNewPost} />}
+          />
 
           {/* <Route path="/post/:id" component={Post} />
           <Route path="/user/:id" component={UserProfile} />
