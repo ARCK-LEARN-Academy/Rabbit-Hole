@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
 
   describe 'posts create' do
     it 'can create a post' do
-      burrow = Burrow.first
+      burrow = Burrow.first 
       user = User.first
       community_post = burrow.posts.create title: 'Community Update', content: 'You are doing a great job!', user_id: user.id
       expect(Post.all.length).to eq 1
