@@ -5,7 +5,7 @@ RSpec.describe Burrow, type: :model do
     it "can create a new burrow" do 
       burrow = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
       expect(Burrow.all.length).to eq 1
-    end 
+    end
     it "won't create a burrow without a title" do 
       burrow = Burrow.create about: "Do happy things", image: 'i;lsajoiid'
       expect(burrow.errors[:title]).to_not be_empty
@@ -17,20 +17,11 @@ RSpec.describe Burrow, type: :model do
     it "wont create a burrow without an image" do
       burrow = Burrow.create title: "Happy", about: "Do happy things"
       expect(burrow.errors[:image]).to_not be_empty
-    end 
-    it "won't create a burrow that is not unique" do 
+    end
+    it "won't create a burrow with a title that is not unique" do 
       burrow = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
       burrow2 = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
-      # p burrow2.errors
-      expect(burrow.errors[:title]).to_not be_empty
-      expect(burrow.errors[:about]).to_not be_empty
-      expect(burrow.errors[:image]).to_not be_empty
-    end
-  end 
-  describe "burrows read" do 
-    it "can get a list of all the burrows" do
-    end
-    it "can get a single burrow" do
+      expect(burrow2).to be_invalid
     end
   end 
 end 

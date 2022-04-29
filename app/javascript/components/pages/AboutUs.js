@@ -40,7 +40,7 @@ class AboutUs extends Component {
           <CardBody>
             <CardTitle tag="h5">Alexis G. Ranga</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              <h6>LEARN Academy</h6>
+              <h6>ARCK Lab Design Lead</h6>
             </CardSubtitle>
             <CardText>
             This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
@@ -60,7 +60,7 @@ class AboutUs extends Component {
           <CardBody>
             <CardTitle tag="h5">Ramon Bolds</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-            <h6>LEARN Academy</h6>
+            <h6>ARCK Lab Product Manager</h6>
             </CardSubtitle>
             <CardText>
               This is a wider card with supporting text below as a natural
@@ -82,7 +82,7 @@ class AboutUs extends Component {
           <CardBody>
             <CardTitle tag="h5">Curtis Liu</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-            <h6>LEARN Academy</h6>
+            <h6>ARCK Lab Tech Lead</h6>
             </CardSubtitle>
             <CardText>
               This is a wider card with supporting text below as a natural
@@ -104,12 +104,10 @@ class AboutUs extends Component {
           <CardBody>
             <CardTitle tag="h5">Keelan Patterson Caesar</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-            <h6>LEARN Academy</h6>
+            <h6>ARCK Lab Project Manager</h6>
             </CardSubtitle>
             <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
+              Loves playing Ukulele and learning new skills. Constantly improving. 
             </CardText>
             <Button
             href="https://www.linkedin.com/in/keelanpc/">
