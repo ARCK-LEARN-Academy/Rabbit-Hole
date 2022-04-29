@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :burrow
-  validates :title, :content, :burrow_id, presence: true
-  validates :title, :content, uniqueness: true
+
+  validates :title, :content, presence: true
+  validates :title, uniqueness: true
 end

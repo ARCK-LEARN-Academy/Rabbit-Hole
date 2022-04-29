@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Burrow, type: :model do
+  before do
+    Burrow.delete_all
+  end
+
   describe "burrows create" do 
     it "can create a new burrow" do 
       burrow = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
