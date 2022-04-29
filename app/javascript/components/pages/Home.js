@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BurrowCards from "../components/BurrowCards";
 
-
 class Home extends Component {
   constructor(props) {
     super(props);

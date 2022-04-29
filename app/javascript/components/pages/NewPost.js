@@ -32,7 +32,7 @@ class NewPost extends Component {
       },
       method: "POST",
     })
-      .then((response) => console.log(response.json()))
+      .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((errors) => console.log("Error: Post not generated", errors));
   };

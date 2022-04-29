@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def create
     render json: {}, status: 401 unless user_signed_in?
 
-    post = current_user.posts.new(posts_params)
+    post = current_user.posts.new(post_params)
 
     if post.save
       render json: post

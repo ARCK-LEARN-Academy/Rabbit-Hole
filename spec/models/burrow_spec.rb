@@ -21,7 +21,10 @@ RSpec.describe Burrow, type: :model do
     it "won't create a burrow that is not unique" do 
       burrow = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
       burrow2 = Burrow.create title: "Happy", about: "Do happy things", image: 'i;lsajoiid'
-      p burrow2.errors
+      # p burrow2.errors
+      expect(burrow.errors[:title]).to_not be_empty
+      expect(burrow.errors[:about]).to_not be_empty
+      expect(burrow.errors[:image]).to_not be_empty
     end
   end 
   describe "burrows read" do 
