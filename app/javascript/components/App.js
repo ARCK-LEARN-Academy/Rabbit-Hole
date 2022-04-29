@@ -44,8 +44,13 @@ class App extends React.Component {
             )}
           />
           <Route
-            path="/posts/new"
-            render={(props) => <NewPost createNewPost={this.createNewPost} />}
+            path="/newpost/:id"
+            render={(props) => (
+              <NewPost
+                burrowId={props.match.params.id}
+                createNewPost={this.createNewPost}
+              />
+            )}
           />
 
           {/* <Route path="/post/:id" component={Post} />

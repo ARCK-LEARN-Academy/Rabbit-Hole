@@ -38,7 +38,7 @@ class ShowBurrow extends Component {
       return (
         <>
           <h1>{this.state.burrow.title}</h1>
-          <Link to={"/posts/new"}>
+          <Link to={`/newpost/${this.state.burrow.id}`}>
             <Button>Create a New Post!</Button>
           </Link>
           <CardGroup>

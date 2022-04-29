@@ -9,6 +9,7 @@ class NewPost extends Component {
       newPost: {
         title: "",
         content: "",
+        burrow_id: this.props.burrowId,
       },
       submitted: false,
     };
