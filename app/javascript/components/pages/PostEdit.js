@@ -17,10 +17,6 @@ class PostEdit extends Component {
 
   
 
-  // componentDidMount() {
-  //   const { id, ...rest } = this.props.post
-  //   this.setState({ newPost: rest })
-  // }
 
   handleChange = (e) => {
     let { newPost } = this.state
@@ -30,11 +26,23 @@ class PostEdit extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.updatePost(this.state.newPost, this.props.post.id)
+    this.updatePost(this.state.newPost, this.props.post_id)
     this.setState({ submitted: true })
   };
 
+  updatePost = (editpost, id) => {
+    fetch(`/posts/${id}`, {
+      body: JSON.stringify(editpost),
+      headers: {
+        "Content-Type": "application/json",
+      },
 
+      method: "PATCH",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.readPost())
+      .catch((errors) => console.log("Post update errors:", errors));
+  };
   
   render() {
    

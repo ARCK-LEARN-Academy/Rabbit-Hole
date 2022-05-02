@@ -31,19 +31,7 @@ class App extends React.Component {
     console.log(NewPost);
   };
 
-  updatePost = (updatedpost, id) => {
-    fetch(`/posts/${id}`, {
-      body: JSON.stringify(updatedpost),
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      method: "PATCH",
-    })
-      .then((response) => response.json())
-      .then((payload) => this.readPost())
-      .catch((errors) => console.log("Post update errors:", errors));
-  };
+  
 
   deletePost = (id) => {
     console.log(`Post at ${id} was deleted`, id);

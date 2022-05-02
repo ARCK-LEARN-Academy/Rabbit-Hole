@@ -25,9 +25,23 @@ class NewBurrow extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createNewBurrow(this.state.newBurrow);
+    this.createNewBurrow(this.state.newBurrow);
     this.setState({ submitted: true });
   };
+
+  createNewBurrow = (newBurrow) => {
+    fetch("/burrows", {
+      body: JSON.stringify(newBurrow),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+     
+    .then(result => console.log(result))
+    .catch(errors => console.log("Error: Burrow not generated", errors))
+}
 
   render() {
     return (
