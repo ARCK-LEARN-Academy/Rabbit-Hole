@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../components/headerstyles.css";
-
 import {
   Card,
   CardText,
@@ -10,7 +9,6 @@ import {
   CardBody,
   Col,
 
-  
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -56,7 +54,7 @@ class ShowBurrow extends Component {
                 <br /> {this.state.burrow.about}
                 <br />
                 <br />
-                <NavLink to={`/postnew/${this.state.burrow.id}`}>
+                <NavLink to={`/newpost/${this.state.burrow.id}`}>
                   <Button className="createbutton">Create New Post</Button>
                   <br />
                   <br />
@@ -66,6 +64,7 @@ class ShowBurrow extends Component {
             </CardBody>
 
             <CardGroup className="postsection"></CardGroup>
+
             {posts?.map((post) => (
               <Card key={post.id}>
                 <CardBody>
@@ -80,7 +79,6 @@ class ShowBurrow extends Component {
                   <CardTitle tag="h4">{post.content}</CardTitle>
                  
                   
-
                   <NavLink to={`/postedit/${this.state.burrow.id}`}>
                     <Button className="createbutton">Edit this Post</Button>
                   </NavLink>

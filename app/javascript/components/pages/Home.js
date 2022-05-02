@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BurrowCards from "../components/BurrowCards";
 import "../components/burrowcards.css"
 
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ class Home extends Component {
   }
 
   render() {
-    const { posts, isLoaded } = this.state;
+    const { isLoaded } = this.state;
     if (isLoaded) {
       return (
         <div className="homebackground">

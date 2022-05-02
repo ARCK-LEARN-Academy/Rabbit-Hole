@@ -25,7 +25,6 @@ class AboutUs extends Component {
           <h1>About Us</h1>
           <br />
         </div>
-
         <div className="aboutusheader">
           <CardGroup>
             <Card>
@@ -130,7 +129,7 @@ class AboutUs extends Component {
                   <h6>LEARN Academy</h6>
                 </CardSubtitle>
                 <CardText>
-                  About me thingy: Father. Musician. Coder. When not bashing his
+                  Father. Musician. Coder. When not bashing his
                   head against the keyboard, Keelan enjoys playing his ukulele
                   and spending time with his kids. Enjoys taking on new
                   challenges.
@@ -144,6 +143,7 @@ class AboutUs extends Component {
           <h1>A R C K</h1>
         </div>
       </>
+
     );
   }
 }

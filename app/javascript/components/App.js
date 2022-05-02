@@ -11,6 +11,7 @@ import NewPost from "./pages/NewPost";
 import ShowBurrow from "./pages/ShowBurrow";
 import PostEdit from "./pages/PostEdit";
 
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
@@ -22,14 +23,6 @@ class App extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.readPost();
-  // }
-
-  // componentDidMount() {
-  //   this.readBurrow();
-  // }
-
   createNewBurrow = (NewBurrow) => {
     console.log(NewBurrow);
   };
@@ -38,36 +31,8 @@ class App extends React.Component {
     console.log(NewPost);
   };
 
-  createNewBurrow = (newBurrow) => {
-    fetch("/burrows", {
-      body: JSON.stringify(newBurrow),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    })
-      .then((response) => response.json())
-
-      .then((result) => console.log(result))
-      .catch((errors) => console.log("Error: Burrow not generated", errors));
-  };
-
-  // readPost = () => {
-  //   fetch("http://localhost:3000/posts")
-  //     .then((response) => response.json())
-  //     .then((payload) => this.setState({ posts: payload }))
-  //     .catch((errors) => console.log("Error: Post Read Errors", errors));
-  // };
-
-  // readBurrow = () => {
-  //   fetch("http://localhost:3000/burrows")
-  //     .then((response) => response.json())
-  //     .then((payload) => this.setState({ posts: payload }))
-  //     .catch((errors) => console.log("Error: Burrow Read Errors", errors));
-  // };
-
   updatePost = (updatedpost, id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`/posts/${id}`, {
       body: JSON.stringify(updatedpost),
       headers: {
         "Content-Type": "application/json",
@@ -77,13 +42,6 @@ class App extends React.Component {
     })
       .then((response) => response.json())
       .then((payload) => this.readPost())
-      // .then((results) => {
-      //   this.setState({
-      //     isLoaded: true,
-      //     burrow: results,
-      //     posts: results.posts,
-      //   });
-      // })
       .catch((errors) => console.log("Post update errors:", errors));
   };
 
@@ -92,16 +50,16 @@ class App extends React.Component {
   };
 
   deletePost = (id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`/posts/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },
       method: "DELETE",
     })
       .then((response) => response.json())
-      // .then((payload) => this.readPost())
       .catch((errors) => console.log("delete errors:", errors));
   };
+
 
   render() {
     return (
@@ -118,11 +76,10 @@ class App extends React.Component {
           />
 
           <Route
-            path="/postnew/:id"
+            path="/newpost/:id"
             render={(props) => (
               <NewPost
                 burrowId={props.match.params.id}
-                postId={props.match.params.id}
                 createNewPost={this.createNewPost}
               />
             )}
@@ -138,11 +95,6 @@ class App extends React.Component {
           />
 
           <Route path="/burrowcards" component={Home} />
-
-          {/* <Route path="/post/:id" component={Post} />
-          <Route path="/user/:id" component={UserProfile} />
-           */}
-
           <Route path="/aboutus" component={AboutUs} />
           <Route component={NotFound} />
         </Switch>
