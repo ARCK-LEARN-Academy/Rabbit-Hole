@@ -10,13 +10,4 @@ RSpec.describe PostsController do
       expect(response).to be_successful
     end
   end
-
-  describe "POST create" do
-  end
-
-  describe "PUT update" do
-  end
-
-  describe "DELETE destroy" do
-  end
 end
