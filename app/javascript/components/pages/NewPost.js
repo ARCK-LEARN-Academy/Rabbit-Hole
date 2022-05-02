@@ -1,6 +1,10 @@
-import React, {Component} from "react";
-import { Button, Form, FormGroup, Input, Label} from 'reactstrap'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Redirect } from "react-router-dom";
+
+
+import '../components/headerstyles.css';
+
 
 class NewPost extends Component {
     constructor(props){
@@ -8,7 +12,11 @@ class NewPost extends Component {
         this.state = {
             newPost: {
                 title: "",
-                content: ""
+                content: "",
+                burrow_id: this.props.burrowId,
+                
+                
+
             },
             submitted: false
         }
@@ -21,17 +29,18 @@ class NewPost extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        this.createNewPost(this.state.newPost)
+        this.props.createNewPost(this.state.newPost)
         this.setState({submitted: true})
     
     }
 
-    createNewPost = (newPost) => {
+    createNewPost = (updatedpost) => {
         fetch("/posts", {
-          body: JSON.stringify(newPost),
+          body: JSON.stringify(updatedpost),
           headers: {
             "Content-Type": "application/json"
           },
+
           method: "POST"
         })
         .then(response => response.json())
@@ -39,34 +48,43 @@ class NewPost extends Component {
         .then(result => console.log(result))
         .catch(errors => console.log("Error: Post not generated", errors))
     }
+  render() {
+    return (
+      <>
+        <div className="abouttitle">
+          <br />
+          <h1>Add a new Post</h1>
+          <br />
+        </div>
 
-    render() {
-        return(
-            <>
-                <h1>Add a new Post!</h1>
-                <Form>
-                    <FormGroup>
-                        <Label>Title</Label>
-                        <Input type="text" name="title" value={this.state.newPost.title} onChange={this.handleChange}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label>Content</Label>
-                        <Input type="text" name="content" value={this.state.newPost.content} onChange={this.handleChange}/>
-                    </FormGroup>
-                    <Button name="submit" onClick={this.handleSubmit}>
-                        Create a New Post
-                    </Button>
-                    {this.state.submitted && <Redirect to="/" />}
-                </Form>
-
-            </>
-        )
-    }
+        <div className="aboutusheader"></div>
+        <Form>
+          <FormGroup>
+            <Label>Title</Label>
+            <Input
+              type="text"
+              name="title"
+              value={this.state.newPost.title}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="exampleText">Content</Label>
+            <Input
+              id="exampleText"
+              name="content"
+              type="textarea"
+              value={this.state.newPost.content}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <Button name="submit" onClick={this.handleSubmit}>
+            Create a New Post
+          </Button>
+          {this.state.submitted && <Redirect to="/" />}
+        </Form>
+      </>
+    );
+  }
 }
-export default NewPost
-
-
-
-
-
-
+export default NewPost;

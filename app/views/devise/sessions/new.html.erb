@@ -1,0 +1,78 @@
+
+<div class="signup">
+
+<h1 class="sign">Sign in</h1>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+  <br />
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+    <br />
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+  <br />
+    <%= f.submit "Log in", class: 'btn btn-dark btn-lg btn-block' %>
+    <br />
+    <br />
+   
+  </div>
+    <div class="auth-links register-text">
+
+      <%= render "devise/shared/links" %>
+    </div>
+
+  <% end %>
+
+  <%=link_to "/" do %>
+    <%= image_tag "rabbitlogo.png", :class => "rabbitsignup" %>
+  <% end %>
+  
+  <ul class="social">
+  <li><a href="https://www.facebook.com/"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+  <li><a href="https://twitter.com/"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+  <li><a href="https://www.instagram.com/"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+  </ul>
+  
+ 
+
+<footer div class="footerdevise">
+<br />
+<br />
+<br />
+<br />
+<br />
+<a href="/aboutus">About Us</a>
+</footer>
+
+
+   
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
