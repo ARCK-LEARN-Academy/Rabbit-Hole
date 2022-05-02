@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BurrowCards from "../components/BurrowCards";
 
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -25,12 +24,12 @@ class Home extends Component {
   }
 
   render() {
-    const { posts, isLoaded } = this.state;
+    const { isLoaded } = this.state;
     if (isLoaded) {
       return (
         <>
           <h1>Explore the Burrows</h1>
-          <BurrowCards burrows={burrows} />
+          <BurrowCards burrows={this.state.burrows} />
         </>
       );
     }

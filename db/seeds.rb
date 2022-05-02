@@ -21,7 +21,23 @@ burrows = [
   }
 ]
 
-burrows.each do |each_burrow|
-  Burrow.create each_burrow
+burrows = burrows.map do |each_burrow|
   puts "creating burrow #{each_burrow}"
-end 
+  Burrow.create each_burrow
+end
+
+user = User.where(email: "test@example.com").first_or_create do |user|
+  user.password = "password"
+  user.password_confirmation = "password"
+end
+
+burrows.each do |burrow|
+  3.times do |i|
+    Post.create(
+      title: "Post #{i} for #{burrow.title}",
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      user: user,
+      burrow: burrow
+    )
+  end
+end

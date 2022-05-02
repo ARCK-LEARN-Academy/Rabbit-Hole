@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardText,
@@ -14,7 +15,7 @@ class ShowBurrow extends Component {
     this.state = {
       isLoaded: false,
       burrow: null,
-      posts: []
+      posts: [],
     };
   }
 
@@ -25,7 +26,7 @@ class ShowBurrow extends Component {
         this.setState({
           isLoaded: true,
           burrow: results,
-          posts: results.posts
+          posts: results.posts,
         });
       })
       .catch((errors) => console.log("Posts errors:", errors));
@@ -37,6 +38,9 @@ class ShowBurrow extends Component {
       return (
         <>
           <h1>{this.state.burrow.title}</h1>
+          <Link to={`/newpost/${this.state.burrow.id}`}>
+            <Button>Create a New Post!</Button>
+          </Link>
           <CardGroup>
             {posts?.map((post) => (
               <Card key={post.id}>
