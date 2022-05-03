@@ -40,15 +40,7 @@ class AboutUs extends Component {
                   <h6>LEARN Academy</h6>
                 </CardSubtitle>
                 <CardText>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action. This
-                  is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action. This
-                  is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
+                I don’t like to define myself by the work I’ve done. I define myself by the work I want to do. Skills can be taught, personality is inherent. I prefer to keep learning, continue challenging myself, and do interesting things that matter.
                 </CardText>
                 <Button href="https://www.linkedin.com/in/alexisranga/">
                   LinkedIn

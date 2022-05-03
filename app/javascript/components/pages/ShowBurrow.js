@@ -79,7 +79,7 @@ class ShowBurrow extends Component {
                   <CardTitle tag="h4">{post.content}</CardTitle>
                  
                   
-                  <NavLink to={`/postedit/${this.state.burrow.id}`}>
+                  <NavLink to={`/postedit/${post.id}`}>
                     <Button className="createbutton">Edit this Post</Button>
                   </NavLink>
 

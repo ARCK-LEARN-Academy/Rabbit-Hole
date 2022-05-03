@@ -50,12 +50,12 @@ class App extends React.Component {
       method: "DELETE",
     })
       .then(response => response.json())
-      // .then(result => this.readPost())
       .catch(errors => console.log("Error: Post not deleted", errors))
       
   };
 
   render() {
+    console.log(this.state.posts)
     return (
       <Router>
         <Header {...this.props} />
