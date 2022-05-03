@@ -24,8 +24,8 @@ class ShowBurrow extends Component {
 
   componentDidMount() {
     fetch(`/burrows/${this.props.match.params.burrowid}`)
-      .then((response) => response.json())
-      .then((results) => {
+      .then(response => response.json())
+      .then(results => {
         this.setState({
           isLoaded: true,
           burrow: results,
@@ -54,7 +54,7 @@ class ShowBurrow extends Component {
                 <br /> {this.state.burrow.about}
                 <br />
                 <br />
-                <NavLink to={`/newpost/${this.state.burrow.id}`}>
+                <NavLink to={`/postnew/${this.state.burrow.id}`}>
                   <Button className="createbutton">Create New Post</Button>
                   <br />
                   <br />

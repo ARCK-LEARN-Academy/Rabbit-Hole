@@ -31,17 +31,17 @@ class NewPost extends Component {
     
     }
 
-    createNewPost = () => {
+    createNewPost = (createdPost) => {
     fetch("/posts", {
-      body: JSON.stringify(this.state.newPost),
+      body: JSON.stringify(createdPost),
       headers: {
         "Content-Type": "application/json",
       },
       method: "POST",
     })
-      .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((errors) => console.log("Error: Post not generated", errors));
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(errors => console.log("Error: Post not generated", errors));
   };
   
   render() {

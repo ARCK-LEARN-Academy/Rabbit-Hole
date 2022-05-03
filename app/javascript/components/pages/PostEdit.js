@@ -9,7 +9,8 @@ class PostEdit extends Component {
       newPost: {
         title: "",
         content: "",
-        post_id: this.props.postId,
+        
+        
       },
       submitted: false,
     };
@@ -24,25 +25,13 @@ class PostEdit extends Component {
     this.setState({ newPost: newPost })
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.updatePost(this.state.newPost, this.props.post_id)
+  handleSubmit = () => {
+    // e.preventDefault();
+    this.props.updatePost(this.state.newPost, this.props.post.id)
     this.setState({ submitted: true })
   };
 
-  updatePost = (editpost, id) => {
-    fetch(`/posts/${id}`, {
-      body: JSON.stringify(editpost),
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      method: "PATCH",
-    })
-      .then((response) => response.json())
-      .then((payload) => this.readPost())
-      .catch((errors) => console.log("Post update errors:", errors));
-  };
+  
   
   render() {
    

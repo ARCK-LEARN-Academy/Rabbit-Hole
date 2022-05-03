@@ -11,7 +11,6 @@ import NewPost from "./pages/NewPost";
 import ShowBurrow from "./pages/ShowBurrow";
 import PostEdit from "./pages/PostEdit";
 
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
@@ -26,28 +25,22 @@ class App extends React.Component {
   createNewBurrow = (NewBurrow) => {
     console.log(NewBurrow);
   };
-
   createNewPost = (NewPost) => {
     console.log(NewPost);
   };
 
-  
-
-  deletePost = (id) => {
-    console.log(`Post at ${id} was deleted`, id);
-  };
-
-  deletePost = (id) => {
-    fetch(`/posts/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .catch((errors) => console.log("delete errors:", errors));
-  };
-
+  updatePost = (edit, id) => {
+    fetch(`http://localhost:3000/posts/`)
+      .then(response => response.json())
+      .then(results => {
+        this.setState({
+          isLoaded: true,
+          burrow: results,
+          posts: results.posts,
+        });
+      })
+      .catch((errors) => console.log("Posts errors:", errors));
+  }
 
   render() {
     return (
@@ -64,7 +57,7 @@ class App extends React.Component {
           />
 
           <Route
-            path="/newpost/:id"
+            path="/postnew/:id"
             render={(props) => (
               <NewPost
                 burrowId={props.match.params.id}
@@ -73,16 +66,18 @@ class App extends React.Component {
             )}
           />
 
-          <Route
-            path="/postedit/:id"
-            render={(props) => {
-              let id = props.match.params.id;
-              let post = this.state.posts.find((post) => post.id === +id);
-              return <PostEdit post={post} updatePost={this.updatePost} />;
-            }}
-          />
+          <Route path="/PostEdit/:id" render={(props) => {
+            let id = props.match.params.id
+            let edit = this.state.posts.find(edit => edit.id === +id)
+            return <PostEdit updatePost={this.updatePost} edit={edit} />
+          }}/>
+
+         
 
           <Route path="/burrowcards" component={Home} />
+
+         
+
           <Route path="/aboutus" component={AboutUs} />
           <Route component={NotFound} />
         </Switch>
