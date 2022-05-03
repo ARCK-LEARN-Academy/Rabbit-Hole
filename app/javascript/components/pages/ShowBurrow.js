@@ -23,7 +23,7 @@ class ShowBurrow extends Component {
   }
 
   componentDidMount() {
-    fetch(`/burrows/${this.props.match.params.burrowid}`)
+    fetch(`/burrows/${this.props.burrowid}`)
       .then(response => response.json())
       .then(results => {
         this.setState({
@@ -85,7 +85,8 @@ class ShowBurrow extends Component {
 
 
                   <NavLink to="/burrowcards">
-                        <Button className="createbutton">
+                        <Button className="createbutton" 
+                        onClick= {() => this.props.deletedPost(post.id)}>
                           Delete this Post
                         </Button>
                       </NavLink>

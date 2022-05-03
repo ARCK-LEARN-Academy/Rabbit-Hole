@@ -9,14 +9,14 @@ class PostEdit extends Component {
       newPost: {
         title: "",
         content: "",
-        
+        burrow_id: this.props.burrowId,
         
       },
       submitted: false,
     };
   };
 
-  
+ 
 
 
   handleChange = (e) => {
@@ -25,16 +25,30 @@ class PostEdit extends Component {
     this.setState({ newPost: newPost })
   };
 
-  handleSubmit = () => {
-    // e.preventDefault();
-    this.props.updatePost(this.state.newPost, this.props.post.id)
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.editPost(this.state.newPost, this.props.post.id)
     this.setState({ submitted: true })
   };
 
+  editPost = (editedpost, id) => {
+    fetch(`/posts/${id}`, {
+      body: JSON.stringify(editedpost),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then(response => response.json())
+      // .then(result => this.readPost())
+      .catch(errors => console.log("Error: Post not edited", errors))
+      
+  };
+  
   
   
   render() {
-   
+   console.log(this.props.post)
     return (
       <>
         <h1>Edit your Post</h1>
@@ -63,7 +77,8 @@ class PostEdit extends Component {
           <Button name="submit" onClick={this.handleSubmit}>
             Update this Post
           </Button>
-          {this.state.submitted && <Redirect to={`/burrowcards/${this.props.post.id}`} />}
+          {this.state.submitted && <Redirect to="/" />}
+          
         </Form>
       </>
     )

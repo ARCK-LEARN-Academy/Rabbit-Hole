@@ -22,6 +22,10 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.readPost()
+  }
+
   createNewBurrow = (NewBurrow) => {
     console.log(NewBurrow);
   };
@@ -29,18 +33,27 @@ class App extends React.Component {
     console.log(NewPost);
   };
 
-  updatePost = (edit, id) => {
-    fetch(`http://localhost:3000/posts/`)
-      .then(response => response.json())
-      .then(results => {
-        this.setState({
-          isLoaded: true,
-          burrow: results,
-          posts: results.posts,
-        });
-      })
-      .catch((errors) => console.log("Posts errors:", errors));
+  readPost = () => {
+    fetch("/posts")
+    .then(response => response.json())
+    .then(payload => this.setState({ posts: payload}))
+    .catch(errors => console.log("Error: Post not edited", errors));
   }
+  
+
+  deletedPost = (id) => {
+    fetch(`/posts/${id}`, {
+      
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then(response => response.json())
+      // .then(result => this.readPost())
+      .catch(errors => console.log("Error: Post not deleted", errors))
+      
+  };
 
   render() {
     return (
@@ -48,7 +61,10 @@ class App extends React.Component {
         <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/burrow/:burrowid" component={ShowBurrow} />
+          <Route path="/burrow/:burrowid"
+          render={(props) => {
+            return <ShowBurrow burrowid = {props.match.params.burrowid} deletedPost={this.deletedPost} />
+          }} />
           <Route
             path="/burrownew"
             render={(props) => (
@@ -66,10 +82,11 @@ class App extends React.Component {
             )}
           />
 
-          <Route path="/PostEdit/:id" render={(props) => {
+          <Route path="/postedit/:id"
+           render={(props) => {
             let id = props.match.params.id
-            let edit = this.state.posts.find(edit => edit.id === +id)
-            return <PostEdit updatePost={this.updatePost} edit={edit} />
+            let post = this.state.posts.find(post => post.id === +id)
+            return <PostEdit editPost={this.editPost} post={post} />
           }}/>
 
          
