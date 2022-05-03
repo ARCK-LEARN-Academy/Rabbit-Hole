@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import BurrowCards from "../components/BurrowCards";
+import "../components/burrowcards.css"
+
 
 class Home extends Component {
   constructor(props) {
@@ -27,10 +29,11 @@ class Home extends Component {
     const { isLoaded } = this.state;
     if (isLoaded) {
       return (
-        <>
+        <div className="homebackground">
+          <br />
           <h1>Explore the Burrows</h1>
           <BurrowCards burrows={this.state.burrows} />
-        </>
+        </div>
       );
     }
   }

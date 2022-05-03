@@ -11,4 +11,103 @@
 
 .aboutusheader {
   text-align: center;
+  background-color: #FAB162;
+ 
+  }
+
+ .me-auto {
+   padding-bottom: 2px;
+ 
+ }
+
+ .header {
+   background-color: #272727;
+ }
+
+ .nav-text {
+   color: #FAB162;
+   margin-left: 20px;
+   margin-top: 10px;
+   
+ }
+
+ .rightnav {
+   color: #FAB162;
+ }
+ 
+ .nav-link {
+   color: #FAB162;
+   margin-top: 15px;
+ }
+
+
+ .navbartext {
+   color: #FAB162;
+ }
+
+ .cardbody {
+   background-color: #272727;
+   color: #FAB162;
+ }
+
+ .abouttitle {
+   font-size: xx-large;
+   text-align: center;
+   background-color: #FAB162;
+   
+   
+  
+ }
+
+ .showburrow {
+  background-color: #272722;
+  margin: 10px 10px 10px 10px;
+  background-size: cover;
+  text-align: center;
+  margin-bottom: 50px;
+  display: inline;
+  
+ }
+
+ .showburrowimage {
+   align-items: center;
+   background-color: #272722;
+   color: #FAB162;
+  
+ 
+ }
+
+ .burrowtitle {
+   background-color: #FAB162;
+  text-align: center;
+ }
+
+ .burrowtext {
+  text-align: center;
+ }
+
+ .createbutton {
+   text-align: center;
+   align-content: center;
+   display: inline-block;
+   width: 10%;
+   background-color: #272722;
+   color: #fff;
+   
+   
+ }
+
+ .homebackground {
+  background-color: #fab162;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.addbody {
+  text-align: center;
+  font-size: xx-large;
+  align-items: center;
+margin-left: 30px;
+margin-right: 60px;
+ 
 }

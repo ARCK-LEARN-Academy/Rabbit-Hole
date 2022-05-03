@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import "../components/headerstyles.css";
 import {
   Card,
   CardText,
@@ -7,7 +7,10 @@ import {
   Button,
   CardGroup,
   CardBody,
+  Col,
+
 } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 class ShowBurrow extends Component {
   constructor(props) {
@@ -20,9 +23,9 @@ class ShowBurrow extends Component {
   }
 
   componentDidMount() {
-    fetch(`/burrows/${this.props.match.params.burrowid}`)
-      .then((response) => response.json())
-      .then((results) => {
+    fetch(`/burrows/${this.props.burrowid}`)
+      .then(response => response.json())
+      .then(results => {
         this.setState({
           isLoaded: true,
           burrow: results,
@@ -37,21 +40,62 @@ class ShowBurrow extends Component {
     if (isLoaded) {
       return (
         <>
-          <h1>{this.state.burrow.title}</h1>
-          <Link to={`/newpost/${this.state.burrow.id}`}>
-            <Button>Create a New Post!</Button>
-          </Link>
-          <CardGroup>
+          <div className="homebackground">
+            <br />
+            <h1>{this.state.burrow.title} </h1>
+            <br />
+          </div>
+
+          <Col sm="6" className="showburrow">
+            <CardBody className="showburrowimage">
+              <img src={this.state.burrow.image} />
+              <CardText className="burrowtext">
+                <br />
+                <br /> {this.state.burrow.about}
+                <br />
+                <br />
+                <NavLink to={`/postnew/${this.state.burrow.id}`}>
+                  <Button className="createbutton">Create New Post</Button>
+                  <br />
+                  <br />
+                  <br />
+                </NavLink>
+              </CardText>
+            </CardBody>
+
+            <CardGroup className="postsection"></CardGroup>
+
             {posts?.map((post) => (
               <Card key={post.id}>
                 <CardBody>
-                  <CardTitle tag="h5">{post.title}</CardTitle>
-                  <CardText>Click to read more!</CardText>
-                  <Button>Open {post.title}</Button>
+                  <br />
+                  <br />
+
+                  <CardTitle tag="h1">{post.title}</CardTitle>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <CardTitle tag="h4">{post.content}</CardTitle>
+                 
+                  
+                  <NavLink to={`/postedit/${post.id}`}>
+                    <Button className="createbutton">Edit this Post</Button>
+                  </NavLink>
+
+
+                  <NavLink to="/burrowcards">
+                        <Button className="createbutton" 
+                        onClick= {() => this.props.deletedPost(post.id)}>
+                          Delete this Post
+                        </Button>
+                      </NavLink>
+                    
                 </CardBody>
+                
               </Card>
             ))}
-          </CardGroup>
+          </Col>
         </>
       );
     }

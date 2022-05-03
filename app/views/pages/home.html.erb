@@ -1,0 +1,60 @@
+
+ <section class="showcase">
+ <header>
+   
+  
+  <h2>
+  <%=link_to "/" do %>
+    <%= image_tag "rabbitlogo.png", :class => "rabbit" %>
+    <% end %>
+  </h2>
+   <div class="toggle"></div>
+ </header>
+
+ 
+
+
+
+
+<div class="home-video-wrapper d-flex align-items-center justify-content-center">
+  <%= video_tag "burrowvideo.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  
+</div>
+<div class="overlay"></div>
+    <div class="text">
+ 
+      <h2>Rabbit Hole </h2> 
+      <h3>Keep Digging!</h3>
+      <br />
+      <p>Create your Burrow today!</p>
+      <a href="/burrowcards">Explore</a>
+    </div>
+    <ul class="social">
+      <li><a href="https://www.facebook.com/"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="https://twitter.com/"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="https://www.instagram.com/"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  <div class="menu">
+    <ul>
+      <%# <li><a href="/">Home</a></li> %>
+      <li><a href="/burrowcards">Burrows</a></li>
+      
+      <li><a href="users/sign_up">Sign up/Sign in</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="/aboutus">About Us</a></li>
+      
+      <%# <li><a href="#">Contact</a></li> %>
+    </ul>
+  </div>
+
+  <script>
+  const menuToggle = document.querySelector('.toggle');
+  const showcase = document.querySelector('.showcase');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    showcase.classList.toggle('active');
+  })
+
+  </script>
