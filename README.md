@@ -8,7 +8,6 @@ Users can create new burrows, which is an opportunity to create a conversation o
 Enter ```yarn start``` in terminal to run.
 <br>
 <br>
-<br>
 Contributors: 
 * Mentor: Nick Fuller 
 * Product Manager Ramon 
@@ -18,8 +17,6 @@ Contributors:
 
 ## Why did we start this project? 
 We created a platform that provides ours users a opportunity to share ideas and have open dialogue with like minded individuals.
-<br>
-<br>
 ## List of Dependencies: 
 * @babel/present-react; 
 * @rails/activestorage; 
