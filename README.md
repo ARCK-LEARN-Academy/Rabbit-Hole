@@ -16,11 +16,11 @@ Contributors:
 * Tech lead: Curtis 
 * Design Lead: Alexis Ranga
 
-## Why did we start this project?: 
+## Why did we start this project? 
 We created a platform that provides ours users a opportunity to share ideas and have open dialogue with like minded individuals.
 <br>
 <br>
-List of Dependencies: 
+## List of Dependencies: 
 * @babel/present-react; 
 * @rails/activestorage; 
 * @rails/ujs; 
