@@ -1,22 +1,18 @@
 import React, { Component } from "react";
+import "./headerstyles.css";
+import rabbithole from "../images/rabbitlogo.png";
 import {
   Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Nav,
   Navbar,
   NavbarBrand,
   NavbarText,
   NavbarToggler,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
+  NavLink
 } from "reactstrap";
 
-import "./headerstyles.css";
 
-import rabbithole from "../images/rabbitlogo.png";
 
 export default class Header extends Component {
   render() {
@@ -45,17 +41,8 @@ export default class Header extends Component {
                   paddingTop:"5px",
                   fontSize:"48px"}}>Rabbit Hole</h1>
                   </NavLink>
-                  
-                <NavItem>
-                  <NavLink></NavLink>
-                </NavItem>
-
-                <NavItem>
-                  <NavLink></NavLink>
-                </NavItem>
-
-               
               </Nav>
+
               <NavbarText>
                 <Nav>
                 <NavItem>
@@ -74,8 +61,6 @@ export default class Header extends Component {
                   </NavItem>
                 )}
 
-                
-             
                   {logged_in && (
                     <NavItem>
                       <a href={sign_out_route} className="nav-link">
@@ -106,3 +91,4 @@ export default class Header extends Component {
     );
   }
 }
+

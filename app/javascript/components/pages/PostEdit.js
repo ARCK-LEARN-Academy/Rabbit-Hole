@@ -40,7 +40,6 @@ class PostEdit extends Component {
       method: "PATCH",
     })
       .then(response => response.json())
-      // .then(result => this.readPost())
       .catch(errors => console.log("Error: Post not edited", errors))
       
   };

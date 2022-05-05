@@ -60,7 +60,7 @@ class AboutUs extends Component {
                   <h6>LEARN Academy</h6>
                 </CardSubtitle>
                 <CardText>
-                  About me: Hello, my name is Ramon, but most of my friends and
+                  Hello, my name is Ramon, but most of my friends and
                   family call me 'Mon or Nick! I wake up excited and inspired to
                   know what the day has for me. Becoming a father and serving in
                   the U.S. Marine Corps, created a paradigm shift in my life,
